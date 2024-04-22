@@ -1,8 +1,10 @@
 // singleton
+// when  the object is created from constructor it is singleton   
 //will only have a single object 
 // Object.create
 
 // object literals // this can have multiple instances 
+// when thw object is fromed form literals it can have multiple instances 
 const mySym  = Symbol("key1");
 
 let myObj ={
