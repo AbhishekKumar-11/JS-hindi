@@ -63,8 +63,37 @@ users[1].email
 
 // this the below one is important and often use as for retrival of data from Objects 
 
-console.log(Object.keys(userTinder)); // returns all the keys in the object in an array 
-console.log(Object.values(userTinder));// returns all the Values in the object in an array 
-console.log(Object.entries(userTinder));//return an array in which each key value pair is in an array
+// console.log(Object.keys(userTinder)); // returns all the keys in the object in an array 
+// console.log(Object.values(userTinder));// returns all the Values in the object in an array 
+// console.log(Object.entries(userTinder));//return an array in which each key value pair is in an array
 
-console.log(userTinder.hasOwnProperty('isLoggedIn')); //return that object are having that key valuer pair or not  returns a boolean value 
+//console.log(userTinder.hasOwnProperty('isLoggedIn')); //return that object are having that key valuer pair or not  returns a boolean value 
+
+
+
+// object Destructuring 
+
+ const course ={
+    coursename : "JS in Hindi",
+    price:"999",
+    courseInstructor :"Hitesh"
+ }
+
+ // if we want to take out ther value ffrom object we use 
+ // console.log(course.coursename); this can be also done but it's repetative and old way in 
+
+ //  In ES-6 Destructuring is inroduced 
+
+ const {coursename : name} = course // syntax of destructuring 
+ //console.log(coursename);   we can also use our custom naming convention to give the name to the extracted value by providing the key 
+
+ console.log( name); 
+
+ // especially used in React 
+ // and help in extracting out the data from API 
+
+ [
+    {},
+    {},
+    {}
+]
