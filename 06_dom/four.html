@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom learning </title>
+    <style>
+        body{
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+   // this ia an usual way or you can say you can say a brute force method
+
+      function addLanguage(langName) {
+        // first creating an li element
+     const  li  = document.createElement("li");
+     // and innerHTML changing the inner HTML of the li 
+     // this good but not efficient 
+     //When you use innerHTML to add content to an element, the browser has to parse the entire HTML string you're setting and then rebuild the DOM structure for the element.
+//This process involves parsing the HTML string, creating DOM nodes for each element in the string, and then inserting them into the DOM.  
+     li.innerHTML= `${langName}` ;
+
+      //console.log(li);
+       document.querySelector(".language").appendChild(li);
+     
+   }
+ 
+   // this is more efficient as it uses appendChild 
+   // When you use appendChild() to add content to an element, you're adding individual DOM nodes to the existing DOM structure.
+// This method is efficient because it only involves creating the new DOM node(s) and adding them to the DOM tree without affecting the existing structure.
+   function addOptiLanguage(langName) {
+       const li = document.createElement('li');
+       li.appendChild( document.createTextNode(`${langName}`));
+       document.querySelector('.language').appendChild(li);
+   }
+
+     addLanguage("React");
+     addOptiLanguage("Tailwind");
+
+     // how to Edit 
+    const secondLanguage = document.querySelector('li:nth-child(2)');
+   // console.log(secondLanguage);
+    //secondLanguage.innerHTML="DOJO"
+    const newli = document.createElement("li");
+     newli.textContent= "DOJO";
+    //newli.appendChild(document.createTextNode('DOJO'));
+    secondLanguage.replaceWith(newli);
+
+    // edit
+
+   const firstLang = document.querySelector("li:first-child");
+   firstLang.outerHTML = "<li>TypeScript</li>"
+
+   // 
+   const lastLang = document.querySelector("li:nth-child(3)")
+//    console.log(lastLang);
+   lastLang.remove();
+</script>
+</html>
