@@ -64,3 +64,17 @@ form.addEventListener('submit', function (e) {
   }
 });
  ```
+
+ ## project 3 
+
+ ```javascript
+ // here we are selecteting the div we want insert the data into 
+ const clock = document.querySelector("#clock");
+
+setInterval( function () {
+  // we are calling function date again and again as 
+ // and updating the data into that div after every second 
+  let date = new Date(); 
+  clock.textContent = date.toLocaleTimeString();
+},1000 );
+ ```
