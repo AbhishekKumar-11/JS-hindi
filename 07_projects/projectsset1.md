@@ -163,3 +163,38 @@ function newGame() {
   });
 }
  ```
+
+ ## project 4 byme
+ ```javascript
+ //
+
+let random = Math.floor(Math.random() * (100 - 1 + 1) + 1);
+
+ const submit = document.querySelector('#subt');
+ let arr = [];
+
+submit.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  const input = document.querySelector('#guessField');
+  const previousGuess = document.querySelector('.guesses');
+  const rem = document.querySelector('.lastResult');
+
+  arr.push(input.value);
+  let clutter = '';
+  for (let i = 0; i < arr.length; i++) {
+    clutter += `${arr[i]},`;
+  }
+  previousGuess.innerHTML = clutter;
+  input.value = '';
+
+  rem.innerHTML--;
+
+  if (rem.innerHTML == 0) {
+    rem.innerHTML = 10;
+    arr = [];
+    previousGuess.innerHTML = ``;
+  }
+  // rem.innerHTML =`${rem}`;
+});
+ ``` 
