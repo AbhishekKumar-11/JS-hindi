@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello guys  on let's learn JS with Hitesh </h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+
+    <script>
+        let triggered  ;
+    function logged(str) {
+        const date  = Date.now();
+        console.log(str , date);
+    }
+ 
+    document.querySelector("#start").addEventListener("click" , () =>{
+        triggered =  setInterval( logged,1000,"hii")
+    })
+
+    document.querySelector("#stop").addEventListener("click" , () =>{
+       clearInterval(triggered);
+    })
+
+    </script>
+</body>
+</html>
