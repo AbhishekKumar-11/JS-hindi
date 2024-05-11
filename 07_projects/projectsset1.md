@@ -198,3 +198,27 @@ submit.addEventListener('click', (e) => {
   // rem.innerHTML =`${rem}`;
 });
  ``` 
+
+ ## project 6
+
+``` javascript
+const range = '123456789ABCDEF';
+function randomColor() {
+  let ch = '#';
+  for (let i = 0; i < 6; i++) {
+    let random = Math.floor(Math.random() * 15);
+    ch += range[random];
+  }
+
+  document.querySelector('body').style.backgroundColor = `${ch}`;
+}
+let interval;
+
+document.querySelector('#start').addEventListener('click', () => {
+  interval = setInterval(randomColor, 1000);
+});
+
+document.querySelector('#stop').addEventListener('click', () => {
+  clearInterval(interval);
+});
+```
