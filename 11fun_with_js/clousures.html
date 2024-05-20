@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="orange">orange</button>
+    <button id="green">green</button>
+</body>
+<script>
+    //         function init (){
+    //             let name = "Abhishek kumar" ;
+    //             function innner (){
+    // // here we can see that we access the the variable outside the child (inner) we can also access the elments from the parent 
+    // // which is known as lexical scope 
+    //                 console.log(name);
+    //             }
+    //             innner();
+    //         }
+    
+    //         init();
+    
+    
+            // function outer() {
+            //         let username = "abhishek kumar ";
+            //        // console.log("OUTER", secret);
+            //         function inner (){
+            //             let secret = "123abc";
+            //             console.log("innner" , username);
+            //         }
+            //         function innerTwo (){
+            //             console.log(`inner two ${username}`);
+            //         }
+            //         inner();
+            //         innerTwo();
+            // }
+            // outer();
+
+            // closures 
+
+            function makeFunc(){
+                const name = "abhishek";
+                function displayName(){
+                    console.log(name);
+                }
+
+                return displayName ;
+            }
+  //here we arethinking that if the function makeFunc is executed then the execution context of the that function 
+  // will be removed from stack the whole memory of tha tfunction will be deleted but what closures does that it returns the 
+  // the whole lexical scope (means it returns the func display Name  and also memory shared with it so the variable name is also 
+  //shared with it  ) in order to execute the function successfully
+            const myFunc = makeFunc();
+            myFunc();
+        </script>
+  
+
+<script>
+
+    // document.querySelector("#orange").onclick = function () {
+    //     document.body.style.backgroundColor = "orange";
+    // }
+    // document.querySelector("#green").onclick = function () {
+    //     document.body.style.backgroundColor = "green";
+    // }
+   function clickHandler  (color){
+ 
+
+   
+    return function d() {
+        document.body.style.backgroundColor = `${color}`
+    }
+    
+   }
+    document.querySelector("#orange").onclick = clickHandler("orange") ;
+    document.querySelector("#green").onclick = clickHandler("green") ;
+
+</script>
+</html>
